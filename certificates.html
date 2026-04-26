@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - AKKIM MADHAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .certificates-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #a259ff;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .certificates-subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .certificate-card {
+            background: linear-gradient(135deg, #ffb347 0%, #a259ff 100%);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 8px 32px rgba(162, 89, 255, 0.18), 0 2px 8px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        .certificate-card:nth-child(1) { animation-delay: 0.2s; }
+        .certificate-card:nth-child(2) { animation-delay: 0.3s; }
+        .certificate-card:nth-child(3) { animation-delay: 0.4s; }
+        .certificate-card:nth-child(4) { animation-delay: 0.5s; }
+        .certificate-card:nth-child(5) { animation-delay: 0.6s; }
+        .certificate-card:nth-child(6) { animation-delay: 0.7s; }
+        .certificate-card:nth-child(7) { animation-delay: 0.8s; }
+        .certificate-card:nth-child(8) { animation-delay: 0.9s; }
+        .certificate-card:nth-child(9) { animation-delay: 1.0s; }
+        .certificate-card:nth-child(10) { animation-delay: 1.1s; }
+        .certificate-card:nth-child(11) { animation-delay: 1.2s; }
+
+        .certificate-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 16px 48px rgba(162, 89, 255, 0.28), 0 4px 16px rgba(41, 121, 255, 0.12);
+        }
+
+        .certificate-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover .certificate-icon {
+            transform: scale(1.15) rotate(-10deg);
+        }
+
+        .certificate-name {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            z-index: 1;
+            line-height: 1.4;
+        }
+
+        .certificate-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 1;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .certificate-link:hover {
+            background: white;
+            color: #a259ff;
+            border-color: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .certificate-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.95);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certificates-container {
+                padding: 1rem;
+            }
+
+            .content-section h2 {
+                font-size: 2rem;
+            }
+
+            .certificates-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .certificate-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .certificate-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section h2 {
+                font-size: 1.7rem;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate-card {
+                padding: 1.2rem 1rem;
+            }
+
+            .certificate-icon {
+                font-size: 2rem;
+            }
+        }
+
+        .content-section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AKKIM MADHAN</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html" class="contact-btn">Contact</a></li>
+                <li><a href="login.html" class="admin-btn" target="new">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="certificates-container">
+                <h2>📜 My Certificates</h2>
+                <p class="certificates-subtitle">Professional certifications and achievements</p>
+
+                <div class="certificates-grid">
+                    <!-- Cloud & Azure -->
+                    <div class="certificate-card">
+                        <span class="certificate-category">cisco</span>
+                        <div class="certificate-icon">☁️</div>
+                        <div class="certificate-name">Cisco Essentials</div>
+                        <a href="Cisco Essentials -1.pdf" target="_blank" class="certificate-link">View PDF</a>
+                    </div>
+
+                    <!-- Red Hat -->
+                    <div class="certificate-card">
+                        <span class="certificate-category">Infosys</span>
+                        <div class="certificate-icon">🐧</div>
+                        <div class="certificate-name">DBMS Infosys</div>
+                        <a href="DBMS infosys(24B11DS002).pdf" target="_blank" class="certificate-link">View PDF</a>
+                    </div>
+
+                    <div class="certificate-card">
+                        <span class="certificate-category">Excel</span>
+                        <div class="certificate-icon">🐧</div>
+                        <div class="certificate-name">Microsoft Offce Spacialist</div>
+                        <a href="Excel 2019.pdf" target="_blank" class="certificate-link">View PDF</a>
+                    </div>
+
+                    <div class="certificate-card">
+                        <span class="certificate-category">Infosys</span>
+                        <div class="certificate-icon">🐧</div>
+                        <div class="certificate-name">HTML</div>
+                        <a href="HTML-5.pdf" target="_blank" class="certificate-link">View PDF</a>
+                    </div>
+
+                    <!-- Coursera -->
+                    <div class="certificate-card">
+                        <span class="certificate-category">Python</span>
+                        <div class="certificate-icon">📊</div>
+                        <div class="certificate-name">Python For Data Science</div>
+                        <a href="Python for data science infosys springboard.pdf" target="_blank" class="certificate-link">View PDF</a>
+                    </div>
+
+                    <div class="certificate-card">
+                        <span class="certificate-category">Android </span>
+                        <div class="certificate-icon">📊</div>
+                        <div class="certificate-name">Android Application</div>
+                        <a href="Android Application Development.pdf" target="_blank" class="certificate-link">View PDF</a>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
