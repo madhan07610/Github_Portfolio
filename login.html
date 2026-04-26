@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #23223a;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            animation: float 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .login-container {
+            background:#23223a;
+            padding: 40px;
+            border-radius: 20px;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+            width: 300px;
+            box-shadow: 0 16px 48px rgba(41,121,255,0.18), 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .login-container:hover {
+            box-shadow: 0 24px 64px rgba(41,121,255,0.28), 0 4px 16px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">ADMIN ID:</label>
+                <input type="email" id="email" name="email" placeholder="ADMIN ID" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="PASSWORD">
+            </div>
+            <button type="submit">Login</button>
+            <div class="signup-link">
+                forget your password? <a href="signup.html">Reset Password</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;  
+            console.log('Login:', { email, password });
+            alert('Login submitted!');
+        });
+    </script>
+</body>
+</html>
